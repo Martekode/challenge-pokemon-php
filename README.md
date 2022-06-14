@@ -8,3 +8,5 @@ displaying the data however within html tags required some searching. no i creat
 
 ## adding search input
 i added an input field and a button. i had to figure out how to post the data from the input field to the php code as soon as the button is pressed. it doesn't work perfectly but it oke for now. it took a long time to implement sinds i was searching for a long time. 
+## added evolves from
+i added the eveolves from name underneath the picture via a new fetch. i need to add a check to see if it exist first so that we don't get error when there isn't an evolves from array.
