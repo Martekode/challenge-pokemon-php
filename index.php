@@ -25,7 +25,7 @@
     $species = $PokeArray["species"]["url"];
     $speciesFetch = file_get_contents($species);
     $speciesFetchArray = json_decode($speciesFetch,true);
-    $eveolveFromName = $speciesFetchArray["evolves_from_species"]["name"];
+    
     $sprite = $PokeArray["sprites"]["front_default"];
     $pokeName = $PokeArray["name"];
     #var_dump($sprite);
@@ -33,7 +33,7 @@
     $element = $dom->createElement('h3', $pokeName);
     #We insert the new element as root (child of the document)
     $dom->appendChild($element);
-    $evolveFrom = $dom->createElement('h4', $eveolveFromName);
+    
     $img = $dom->createElement('img', "");
     $attr = $dom->createAttribute("src");
     $tnode = $dom->createTextNode($sprite);
@@ -42,8 +42,18 @@
     $img->appendChild($attr);
     $dom->appendChild($id);
     $dom->appendChild($img);
-    $dom->appendChild($evolveFrom);
     
+    if ($speciesFetchArray["evolves_from_species"]){
+        $eveolveFromName = $speciesFetchArray["evolves_from_species"]["name"];
+        
+        $evolveFrom = $dom->createElement('h4', $eveolveFromName);
+        $dom->appendChild($evolveFrom);
+
+
+    }
+    else{
+        echo "there is no previous evolution";
+    }
 
     echo $dom->saveXML();
 }
