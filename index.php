@@ -7,19 +7,19 @@
     <title>PokemonPhp</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
- <img id="pokemonImg" src="" alt="pokemonImg">
- <div class="info">
-    <h3 id="pokemonName">Pokemon</h3>
-    <p id="pokemonDiscription">Place Pokemon info here</p>
- </div>   
+<body>  
  <?php
     $url = "https://pokeapi.co/api/v2/pokemon/ditto";
     $PokeFetch = file_get_contents($url);
     $PokeArray = json_decode($PokeFetch , true);
     #var_dump($PokeArray);
     var_dump($PokeArray["name"]);
-
+    $pokeName = $PokeArray["name"];
+    $dom = new DOMDocument('1.0', 'utf-8');
+    $element = $dom->createElement('h3', $pokeName);
+    // We insert the new element as root (child of the document)
+    $dom->appendChild($element);
+    echo $dom->saveXML();
 ?>
 </body>
 </html>
