@@ -32,9 +32,13 @@
     $img = $dom->createElement('img', "");
     $attr = $dom->createAttribute("src");
     $tnode = $dom->createTextNode($sprite);
+    $id = $dom->createElement('h3', $PokeArray["id"]);
     $attr->appendChild($tnode);
     $img->appendChild($attr);
+    $dom->appendChild($id);
     $dom->appendChild($img);
+    
+
     echo $dom->saveXML();
 }
 
