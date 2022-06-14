@@ -7,9 +7,17 @@
     <title>PokemonPhp</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>  
+<body>
+    <form action="index.php" method="post">
+        <input type="text" method="post" name="input">
+        <button name="btn1">search</button>
+    </form>
+    
+    
  <?php
-    $url = "https://pokeapi.co/api/v2/pokemon/ditto";
+  if (isset($_POST['btn1'])){
+    $url = "https://pokeapi.co/api/v2/pokemon/" . $_POST["input"];
+       
     $PokeFetch = file_get_contents($url);
     $PokeArray = json_decode($PokeFetch , true);
     #var_dump($PokeArray);
@@ -28,6 +36,9 @@
     $img->appendChild($attr);
     $dom->appendChild($img);
     echo $dom->saveXML();
+}
+
+ 
 
 ?>
 </body>
