@@ -14,7 +14,12 @@
     <p id="pokemonDiscription">Place Pokemon info here</p>
  </div>   
  <?php
-    echo "hello world";
+    $url = "https://pokeapi.co/api/v2/pokemon/ditto";
+    $PokeFetch = file_get_contents($url);
+    $PokeArray = json_decode($PokeFetch , true);
+    #var_dump($PokeArray);
+    var_dump($PokeArray["name"]);
+
 ?>
 </body>
 </html>
