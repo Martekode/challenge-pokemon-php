@@ -27,7 +27,7 @@
     #var_dump($sprite);
     $dom = new DOMDocument('1.0', 'utf-8');
     $element = $dom->createElement('h3', $pokeName);
-    // We insert the new element as root (child of the document)
+    #We insert the new element as root (child of the document)
     $dom->appendChild($element);
     $img = $dom->createElement('img', "");
     $attr = $dom->createAttribute("src");
