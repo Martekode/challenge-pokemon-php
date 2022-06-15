@@ -15,3 +15,8 @@ i added the front default sprite from the "evolves_from"-pokemon. this is done b
 
 ## could be better
 my code is not optimal... its works but the way it is structured is atrotious. everything is inside the button and it is all written after each other instead of calling functions. so my next step is to refacture the code. this is not easy sinds i have no idea how this al works. I can't seem to include a php file into the html. I just don't understand it yet.
+
+## cleaned up some code
+sinds i never really worked with multiple functions and parameters and return values i wanted to clean my code a bit. Even if it's just little... I started with seperating my php files. one for the structure of the page and an other one for the logic (index.php and code.php). i Did this by including the code file atop the body. this makes it so that i can just write the variables in the html itself.
+i had some troubles with making the function and returning the value. but after some help from grandmaster SICCO i understand. i even came up with my own solution to returning multiple values without asking the grandmaster. #proud
+
