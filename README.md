@@ -10,3 +10,8 @@ displaying the data however within html tags required some searching. no i creat
 i added an input field and a button. i had to figure out how to post the data from the input field to the php code as soon as the button is pressed. it doesn't work perfectly but it oke for now. it took a long time to implement sinds i was searching for a long time. 
 ## added evolves from
 i added the eveolves from name underneath the picture via a new fetch. i need to add a check to see if it exist first so that we don't get error when there isn't an evolves from array.
+## evolution
+i added the front default sprite from the "evolves_from"-pokemon. this is done by fetching again with the first fetch url but with the "evolves_from"-pokemon instead of the original pokemon. this first didn't work because i used the wrong fetch-variable. i quickly fixed that and now it displays.
+
+## could be better
+my code is not optimal... its works but the way it is structured is atrotious. everything is inside the button and it is all written after each other instead of calling functions. so my next step is to refacture the code. this is not easy sinds i have no idea how this al works. I can't seem to include a php file into the html. I just don't understand it yet.
