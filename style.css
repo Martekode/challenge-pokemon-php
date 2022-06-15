@@ -6,3 +6,7 @@ text-align: center;
 body{
     background-color: lightblue;
 }
+img{
+    background-color: darkgray;
+    border-radius: 10px;
+}
