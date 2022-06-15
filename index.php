@@ -25,7 +25,10 @@
     $species = $PokeArray["species"]["url"];
     $speciesFetch = file_get_contents($species);
     $speciesFetchArray = json_decode($speciesFetch,true);
-    
+    $evolutionChainUrl = $speciesFetchArray["evolution_chain"]["url"];
+    $evolutionChainFetch = file_get_contents($evolutionChainUrl);
+    $evolutionChainFetchArray = json_decode($evolutionChainFetch,true);
+    #var_dump($evolutionChainFetchArray["evolution_details"]);
     $sprite = $PokeArray["sprites"]["front_default"];
     $pokeName = $PokeArray["name"];
     #var_dump($sprite);
@@ -48,6 +51,17 @@
         
         $evolveFrom = $dom->createElement('h4', $eveolveFromName);
         $dom->appendChild($evolveFrom);
+        $urlEVO = "https://pokeapi.co/api/v2/pokemon/" . $eveolveFromName;
+        $evoSpriteFetch = file_get_contents($urlEVO);
+        $evoSpriteFetchArray = json_decode($evolutionChainFetch,true);
+        var_dump($evoSpriteFetchArray,$urlEVO);
+        #$evoSpriteUrl = $evoSpriteFetchArray["sprites"]["front_default"];
+        #$evoImg = $dom->createElement('img');
+        #$evoAttr = $dom->createAttribute("src");
+        #$evoTnode = $dom->createTextNode($evoSpriteUrl);
+        #$evoAttr->appendChild($evoTnode);
+        #$evoImg->appendChild($evoAttr);
+        #$dom->appendChild($evoImg);
 
 
     }
