@@ -13,7 +13,7 @@ if (isset($_POST['btn1'])){
     $fetchedSpeciesArr = json_decode($fetchedSpecies,true);
 
 
-    #var_dump($pokemonFetchArray["species"]);
+    var_dump($pokemonFetchArray["moves"]["0"]["move"]["name"]);
     $evoData = getEvo($fetchedSpeciesArr,$baseUrl);
     if($fetchedSpeciesArr["evolves_from_species"]){
         $evoName = $evoData[0];
@@ -22,8 +22,17 @@ if (isset($_POST['btn1'])){
         $evoName = "no previous evolution";
     }
 
+
     
+    echo count($pokemonFetchArray["moves"]);
+    $muvesArr = getMuves($pokemonFetchArray);
     
+    var_dump($muvesArr);
+    $muve1 = $muvesArr[0];
+    $muve2 = $muvesArr[1];
+    $muve3 = $muvesArr[2];
+    $muve4 = $muvesArr[3];
+
 }
 function getEvo($fetchedArr,$urlEvo){
     if ($fetchedArr["evolves_from_species"]){
@@ -37,6 +46,19 @@ function getEvo($fetchedArr,$urlEvo){
         
 
     }
+}
+function getMuves($muvesArray){
+    $muvesArr = [];
+    if(count($muvesArray["moves"])<= 4){
+        for ($i = 0; $i < count($muvesArray["moves"]) ; $i++ ){
+            array_push($muvesArr, $muvesArray["moves"]["$i"]["move"]["name"]);
+        }
+    }else{
+        for ($i = 0 ; $i <4 ; $i++){
+            array_push($muvesArr, $muvesArray["moves"]["$i"]["move"]["name"]);
+        }
+    }
+    return $muvesArr;
 }
 
 

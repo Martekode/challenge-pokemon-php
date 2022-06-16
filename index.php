@@ -19,6 +19,14 @@
         <h2 id="pokemonId"><?php echo $pokeId ?></h2>
         <img src="<?php echo $imgSrc ?>" alt="" id="pokemonImg">
     </div>
+    <div id="muvesContainer">
+        <ul>
+            <li><?php echo $muve1 ?></li>
+            <li><?php echo $muve2 ?></li>
+            <li><?php echo $muve3 ?></li>
+            <li><?php echo $muve4 ?></li>
+        </ul>
+    </div>
     <div id="evolutionContainer">
         <h1 id="evoName"><?php echo $evoName ?></h1>
         <img src="<?php echo $evoImg ?>" alt="" id="evoImg">
