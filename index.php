@@ -21,10 +21,12 @@
     </div>
     <div id="muvesContainer">
         <ul>
-            <li><?php echo $muve1 ?></li>
-            <li><?php echo $muve2 ?></li>
-            <li><?php echo $muve3 ?></li>
-            <li><?php echo $muve4 ?></li>
+        <?php foreach($muvesArr as $value): ?>
+            <li>
+                <?= $value ?>
+            </li>
+    <?php endforeach; ?>
+</table>
         </ul>
     </div>
     <div id="evolutionContainer">

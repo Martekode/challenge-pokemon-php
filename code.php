@@ -28,10 +28,7 @@ if (isset($_POST['btn1'])){
     $muvesArr = getMuves($pokemonFetchArray);
     
     var_dump($muvesArr);
-    $muve1 = $muvesArr[0];
-    $muve2 = $muvesArr[1];
-    $muve3 = $muvesArr[2];
-    $muve4 = $muvesArr[3];
+
 
 }
 function getEvo($fetchedArr,$urlEvo){
